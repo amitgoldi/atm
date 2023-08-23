@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "atm"
+version = "0.1.0"
+description = "Example ATM service in FastAPI"
+authors = ["Amit Goldstein <amit.goldi@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.101.1"
+pydantic = "^1"
+beanie = "^1.21.0"
+uvicorn = "^0.23.2"
+motor = {version = "^3.2.0", extras = ["asyncio"]}
+fastapi-health = "^0.4.0"
+pytest = "^7.4.0"
+
+[tool.poetry.group.dev.dependencies]
+mongomock = "^4.1.2"
+mongomock-motor = "^0.0.21"
+httpx = "^0.24.1"
+pytest = "^7.4.0"
+pytest-mock = "^3.11.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+dev='atm.main:main'
